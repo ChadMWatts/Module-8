@@ -23,11 +23,10 @@ let andrea = Person(firstName: "Andrea", lastName: "Mower", age: 24)
 let carol = Person(firstName: "Carol", lastName: "Mordo", age: 30)
 let axton = Person(firstName: "Axton", lastName: "Rose", age: 22)
 let knox = Person(firstName: "Knox", lastName: "Fort", age: 20)
-let clubMembers: [Person] = [james, andrea, carol, knox]
+var clubMembers: [Person] = [james, andrea, carol]
+clubMembers.append(knox)
 
-if Person == clubMembers[] {
-    print("Is Club Member")
-} else {
-    print("Is not in the Club")
+func areYouAMemberOfTheClub(person: Person) -> Bool {
+    return clubMembers.contains(person)
 }
 
