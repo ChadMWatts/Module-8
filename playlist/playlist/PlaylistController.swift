@@ -12,9 +12,11 @@ class PlaylistController {
     
    static let sharedController = PlaylistController()
     
-    var playlist: [Playlist] = []
+    var playlists: [Playlist] = []
     
     func addPlaylist(title: String) {
+        let playlist = Playlist(title: title)
+        playlists.append(playlist)
         
     }
     

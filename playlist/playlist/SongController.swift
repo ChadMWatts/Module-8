@@ -10,7 +10,8 @@ import Foundation
 
 class SongController {
     
-    func createSong(name: String, artist: String, playlist: Playlist) {
-        
+    static func createSong(name: String, artist: String, playlist: Playlist) {
+     let song = Song(name: name, artist: artist)
+        PlaylistController.sharedController.addSongToPlaylist(song, playlist: playlist)
     }
 }

@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="303-g1-JD2">
-                            <rect key="frame" x="0.0" y="64" width="600" height="37"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Playlist Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZU-Pj-ddO">
@@ -36,14 +36,14 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playListCell" id="omX-Gb-u8t" customClass="playListCell">
-                                <rect key="frame" x="0.0" y="129" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="65" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="omX-Gb-u8t" id="F4d-GS-5x6">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="acD-uy-oZN" kind="show" identifier="" id="DFe-Zc-xRL"/>
+                                    <segue destination="acD-uy-oZN" kind="show" identifier="toSongSegue" id="DFe-Zc-xRL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="VG7-ZU-7xj">
-                            <rect key="frame" x="0.0" y="64" width="600" height="64"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="yYR-q6-FIi">
@@ -107,7 +107,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songTableCell" id="0Gx-xT-G3y" customClass="songTableCell">
-                                <rect key="frame" x="0.0" y="156" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Gx-xT-G3y" id="w3F-0V-ETP">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -117,7 +117,6 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="acD-uy-oZN" id="cMj-PF-RBs"/>
-                            <outlet property="delegate" destination="acD-uy-oZN" id="MrJ-cm-AiP"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Songs" id="SFH-Kp-cFw">
@@ -148,9 +147,6 @@
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="oFm-d7-BRe" kind="relationship" relationship="rootViewController" id="34Y-KH-6Yd"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8e-xb-mqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
