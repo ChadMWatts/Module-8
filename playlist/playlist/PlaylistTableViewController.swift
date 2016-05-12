@@ -52,7 +52,7 @@ class PlaylistTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("playListCell", forIndexPath: indexPath)
-        let playlist = PlaylistController.sharedController.playlists[indexPath.row].title
+        let playlist = PlaylistController.sharedController.playlists[indexPath.row]
         cell.textLabel?.text = playlist.title
         cell.detailTextLabel?.text = "\(playlist.songs.count) songs"
         

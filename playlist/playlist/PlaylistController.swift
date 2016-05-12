@@ -10,35 +10,46 @@ import Foundation
 
 class PlaylistController {
     
-   static let sharedController = PlaylistController()
+    private let thePlaylist = "storedPlaylist"
+    
+    static let sharedController = PlaylistController()
     
     var playlists: [Playlist] = []
     
     func addPlaylist(title: String) {
         let playlist = Playlist(title: title)
         playlists.append(playlist)
+        saveToPresistantStorage()
         
     }
     
     func removePlaylist(playlist: Playlist) {
+        saveToPresistantStorage()
         
     }
     
     func addSongToPlaylist(song: Song, playlist: Playlist) {
+        playlist.songs.append(song)
+        saveToPresistantStorage()
         
     }
     
     func removeSongFromPlayList(song: Song, playlist: Playlist) {
+        saveToPresistantStorage()
         
     }
     
-    func mockData() -> [Playlist] {
-        let playlist1 = Playlist(title: "One")
-        let playlist2 = Playlist(title: "Two")
-        let playlist3 = Playlist(title: "Three")
-        let playlist4 = Playlist(title: "Four")
+    func saveToPresistantStorage() {
+        NSUserDefaults.standardUserDefaults().setObject(playlists.map{$0.dictionaryCopy}, forKey: thePlaylist)
+    }
+    
+    func loadfromPresistantStorage() {
+        guard let playlistsDictionaryArray = NSUserDefaults.standardUserDefaults().objectForKey(thePlaylist) as? [[String:AnyObject]] else {
+            return
+        }
+        playlists = playlistsDictionaryArray.flatMap{Playlist(dictionary: $0)}
         
-        return [playlist1, playlist2, playlist3, playlist4]
     }
     
 }
+
